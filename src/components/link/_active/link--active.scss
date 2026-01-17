@@ -1,0 +1,6 @@
+@use 'sass:map';
+@use '../../../styles/colors';
+
+.link--active:active {
+  color: map.get(colors.$get-color, 'green3');
+}

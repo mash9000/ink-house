@@ -1,0 +1,20 @@
+@use 'sass:map';
+@use './colors';
+
+@font-face {
+  font-family: 'Raleway 500';
+  src: url(/fonts/Raleway/raleway-cyrillic-500-normal.woff2) format('woff2');
+}
+
+@mixin text-formatter($element) {
+  @if $element == 'link-static' {
+    font: {
+      family: 'Raleway 500';
+      size: 20px;
+    }
+    color: map.get(colors.$get-color, 'black1');
+    text-decoration: none;
+  } @else {
+    @error 'неверный тип элемента ("#{$element}")';
+  }
+}

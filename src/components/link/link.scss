@@ -1,0 +1,9 @@
+@use '../../styles/text-formatter' as tf;
+
+.link {
+  display: inline-block;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 5px;
+  @include tf.text-formatter('link-static');
+}
