@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '../../../styles/colors';
+@use '../../../../styles/colors';
 
 .link--focus:focus {
   background-color: map.get(colors.$get-color, 'green2');
