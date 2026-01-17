@@ -1,0 +1,7 @@
+@use 'sass:map';
+@use '../../../../styles/colors';
+
+.button--sand {
+  color: map.get(colors.$get-color, 'black1');
+  background-color: map.get(colors.$get-color, 'sand1');
+}

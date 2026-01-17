@@ -1,0 +1,7 @@
+@use 'sass:map';
+@use '../../../../../styles/colors.scss';
+
+.button--sand--active:active {
+  border-color: map.get(colors.$get-color, 'sand4');
+  background-color: map.get(colors.$get-color, 'sand4');
+}

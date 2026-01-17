@@ -1,0 +1,7 @@
+@use 'sass:map';
+@use '../../../../../styles/colors.scss';
+
+.button--green--hover:hover {
+  color: #fff;
+  background-color: map.get(colors.$get-color, 'green1');
+}

@@ -14,6 +14,11 @@
     }
     color: map.get(colors.$get-color, 'black1');
     text-decoration: none;
+  } @else if $element == 'button' {
+    font: {
+      family: 'Raleway 500';
+      size: 20px;
+    }
   } @else {
     @error 'неверный тип элемента ("#{$element}")';
   }

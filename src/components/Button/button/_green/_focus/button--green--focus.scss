@@ -1,0 +1,6 @@
+@use 'sass:map';
+@use '../../../../../styles/colors.scss';
+
+.button--green--focus:focus {
+  background-color: map.get(colors.$get-color, 'green2');
+}
