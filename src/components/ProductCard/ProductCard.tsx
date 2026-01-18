@@ -1,5 +1,6 @@
 import './product-card/product-card.scss';
 import './product-card/__image/product-card__image.scss';
+fiimport './product-card/__image/__frame/product-card__image__frame.scss';
 import './product-card/__owner-or-author/product-card__owner-or-author.scss';
 import './product-card/__title/product-card__title.scss';
 import './product-card/__description/product-card__description.scss';
@@ -25,10 +26,12 @@ export const ProductCard: FC<ProductCardProps> = ({product, children}) => {
     };
     return (
         <figure className="product-card">
-            <img
-                className="product-card__image"
-                src={product.image.src}
-                alt={product.image.description}/>
+            <div className='product-card__image__frame'>
+                <img
+                    className="product-card__image"
+                    src={product.image.src}
+                    alt={product.image.description}/>
+            </div>
             <p className='product-card__owner-or-author'>{product.ownerOrAuthor}</p>
             <figcaption className='product-card__title'>{product.mainTitle}</figcaption>
             {children}
