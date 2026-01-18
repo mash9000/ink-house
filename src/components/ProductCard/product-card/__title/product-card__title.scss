@@ -1,0 +1,7 @@
+@use '../../../../styles/text-formatter' as tf;
+
+.product-card__title {
+  @include tf.text-formatter('product-title');
+  align-self: start;
+  margin-top: 10px;
+}

@@ -1,0 +1,7 @@
+@use '../../../../styles/text-formatter' as tf;
+
+.product-card__price {
+  @include tf.text-formatter('product-price');
+  align-self: start;
+  margin-top: 30px;
+}
