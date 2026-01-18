@@ -65,6 +65,18 @@
     color: #fff;
     text-align: center;
     line-height: 11px;
+  } @else if $element == 'main-link' {
+    font: {
+      family: 'Raleway', sans-serif;
+      optical-sizing: auto;
+      weight: 700;
+      style: normal;
+      size: 20px;
+    }
+    text-align: right;
+    line-height: 35px;
+    color: map.get(colors.$get-color, 'green1');
+    text-decoration: none;
   } @else {
     @error 'неверный тип элемента ("#{$element}")';
   }
