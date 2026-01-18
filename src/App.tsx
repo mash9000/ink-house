@@ -1,5 +1,5 @@
 export const App = () => {
-  return (
-    <p>check</p>
-  )
+    return (
+        <p>check</p>
+    )
 }
