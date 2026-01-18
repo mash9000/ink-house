@@ -54,6 +54,17 @@
       size: 24px;
     }
     color: map.get(colors.$get-color, 'green1');
+  } @else if $element == 'backet-counter' {
+    font: {
+      family: 'Raleway', sans-serif;
+      optical-sizing: auto;
+      weight: 700;
+      style: normal;
+      size: 10px;
+    }
+    color: #fff;
+    text-align: center;
+    line-height: 11px;
   } @else {
     @error 'неверный тип элемента ("#{$element}")';
   }

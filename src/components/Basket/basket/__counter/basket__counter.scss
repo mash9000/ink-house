@@ -1,0 +1,12 @@
+@use 'sass:map';
+@use '../../../../styles/colors';
+@use '../../../../styles/text-formatter' as tf;
+
+.basket__counter {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: map.get(colors.$get-color, 'green1');
+  @include tf.text-formatter('backet-counter');
+}

@@ -1,0 +1,13 @@
+.basket {
+  width: 24px;
+  height: 24px;
+  background: url(/images/basket/status=default.svg) no-repeat center center;
+  background-size: cover;
+  box-sizing: border-box;
+  padding: 1px;
+  display: flex;
+
+  position: absolute;
+  top: 50px;
+  left: calc(50% - 12px);
+}
