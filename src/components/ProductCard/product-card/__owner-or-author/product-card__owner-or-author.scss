@@ -1,0 +1,7 @@
+@use '../../../../styles/text-formatter' as tf;
+
+.product-card__owner-or-author {
+  @include tf.text-formatter('owner-or-author');
+  align-self: start;
+  margin-top: 20px;
+}

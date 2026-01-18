@@ -13,7 +13,7 @@ import './button/_sand/_active/button--sand--active.scss';
 import './button/_rounded/button--rounded.scss';
 import './button/_rectangle/button--rectangle.scss';
 
-import type {FC} from "react";
+import type {CSSProperties, FC} from "react";
 import {ButtonForm} from "./model/ButtonForm.ts";
 import {ButtonColor} from "./model/ButtonColor.ts";
 
@@ -21,13 +21,15 @@ interface ButtonProps {
     color: ButtonColor;
     view: ButtonForm;
     title: string;
+    customStyles?: CSSProperties;
 }
 
-export const Button: FC<ButtonProps> = ({color, view, title}) => {
+export const Button: FC<ButtonProps> = ({color, view, title, customStyles}) => {
     return (
         <button
             className={`button ${getColorSchemeClass(color)} ${getFormClass(view)}`}
-            type='button'>{title}</button>
+            type='button'
+            style={customStyles}>{title}</button>
     );
 }
 

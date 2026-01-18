@@ -1,10 +1,6 @@
 @use 'sass:map';
 @use './colors';
-
-@font-face {
-  font-family: 'Raleway 500';
-  src: url(/fonts/Raleway/raleway-cyrillic-500-normal.woff2) format('woff2');
-}
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 @mixin text-formatter($element) {
   @if $element == 'link-static' {
@@ -16,9 +12,48 @@
     text-decoration: none;
   } @else if $element == 'button' {
     font: {
-      family: 'Raleway 500';
+      family: 'Raleway', sans-serif;
+      optical-sizing: auto;
+      weight: 500;
+      style: normal;
       size: 20px;
     }
+  } @else if $element == 'owner-or-author' {
+    font: {
+      family: 'Raleway', sans-serif;
+      optical-sizing: auto;
+      weight: 500;
+      style: normal;
+      size: 18px;
+    }
+    color: map.get(colors.$get-color, 'gray1');
+  } @else if $element == 'product-title' {
+    font: {
+      family: 'Raleway', sans-serif;
+      optical-sizing: auto;
+      weight: 500;
+      style: normal;
+      size: 30px;
+    }
+    color: map.get(colors.$get-color, 'black1');
+  } @else if $element == 'product-description' {
+    font: {
+      family: 'Raleway', sans-serif;
+      optical-sizing: auto;
+      weight: 500;
+      style: normal;
+      size: 18px;
+    }
+    color: map.get(colors.$get-color, 'black1');
+  } @else if $element == 'product-price' {
+    font: {
+      family: 'Raleway', sans-serif;
+      optical-sizing: auto;
+      weight: 500;
+      style: normal;
+      size: 24px;
+    }
+    color: map.get(colors.$get-color, 'green1');
   } @else {
     @error 'неверный тип элемента ("#{$element}")';
   }

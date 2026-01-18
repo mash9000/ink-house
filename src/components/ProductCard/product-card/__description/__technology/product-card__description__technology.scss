@@ -1,0 +1,5 @@
+@use '../../../../../styles/text-formatter' as tf;
+
+.product-card__description__technology {
+  @include tf.text-formatter('product-description');
+}
