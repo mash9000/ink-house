@@ -5,7 +5,10 @@
 @mixin text-formatter($element) {
   @if $element == 'link-static' {
     font: {
-      family: 'Raleway 500';
+      family: 'Raleway', sans-serif;
+      optical-sizing: auto;
+      weight: 500;
+      style: normal;
       size: 20px;
     }
     color: map.get(colors.$get-color, 'black1');

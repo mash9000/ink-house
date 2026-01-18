@@ -7,14 +7,16 @@ import './basket/__counter/basket__counter.scss';
 import type {FC} from "react";
 
 interface BasketProps {
-    numberOfItemsInTheBasket: number | null;
+    numberOfItemsInTheBasket: number;
 }
 
 export const Basket: FC<BasketProps> = ({numberOfItemsInTheBasket}) => {
     return (
         <div className='basket basket--hover basket--active basket--focus'>
-            {numberOfItemsInTheBasket !== 0 && <span
-                className='basket__counter'>{numberOfItemsInTheBasket}</span>}
+            <span
+                className={`${numberOfItemsInTheBasket > 0 ? 'basket__counter' : ''}`}>
+                {`${numberOfItemsInTheBasket > 0 ? numberOfItemsInTheBasket : ''}`}
+            </span>
         </div>
     );
 }

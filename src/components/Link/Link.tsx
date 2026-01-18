@@ -5,7 +5,7 @@ import './link/_active/link--active.scss';
 
 import type {FC} from "react";
 
-interface LinkProps {
+export interface LinkProps {
     href: URL;
     title: string;
 }
