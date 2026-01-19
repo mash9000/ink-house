@@ -175,6 +175,16 @@
       size: 18px;
     }
     color: map.get(colors.$get-color, 'gray1');
+  } @else if $element == 'footer-country' {
+    font: {
+      family: 'Raleway', sans-serif;
+      optical-sizing: auto;
+      weight: 500;
+      style: normal;
+      size: 18px;
+    }
+    margin-top: 6px;
+    color: map.get(colors.$get-color, 'gray1');
   } @else {
     @error 'неверный тип элемента ("#{$element}")';
   }

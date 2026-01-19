@@ -1,0 +1,6 @@
+@use '../../../../../../../styles/text-formatter' as tf;
+
+.footer__blocks__history__reproductions--country {
+  @include tf.text-formatter('footer-country');
+  margin-left: 5px;
+}
