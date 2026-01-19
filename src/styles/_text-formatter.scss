@@ -156,6 +156,25 @@
     }
     line-height: 120%;
     color: map.get(colors.$get-color, 'gray1');
+  } @else if $element == 'footer-telephone-number' {
+    font: {
+      family: 'Raleway', sans-serif;
+      optical-sizing: auto;
+      weight: 500;
+      style: normal;
+      size: 20px;
+    }
+    color: map.get(colors.$get-color, 'black1');
+    text-decoration: none;
+  } @else if $element == 'footer-subscriber' {
+    font: {
+      family: 'Raleway', sans-serif;
+      optical-sizing: auto;
+      weight: 500;
+      style: normal;
+      size: 18px;
+    }
+    color: map.get(colors.$get-color, 'gray1');
   } @else {
     @error 'неверный тип элемента ("#{$element}")';
   }

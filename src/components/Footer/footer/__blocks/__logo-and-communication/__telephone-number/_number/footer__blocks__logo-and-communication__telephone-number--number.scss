@@ -1,0 +1,5 @@
+@use '../../../../../../../styles/text-formatter' as tf;
+
+.footer__blocks__logo-and-communication__telephone-number--number {
+  @include tf.text-formatter('footer-telephone-number');
+}
