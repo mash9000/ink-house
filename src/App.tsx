@@ -40,8 +40,12 @@ export const App = () => {
         addToCart: () => addToCart()
     }
 
-    const gag = (): void => {
+    const productions = (): void => {
         console.log('Продукция');
+    }
+
+    const review = (): void => {
+        console.log('Ознакомиться');
     }
 
     return (
@@ -64,7 +68,32 @@ export const App = () => {
                     <p className='wrapper__information__description'>Высокое
                         качество отрисовки на плотной бумаге или льняном холсте.
                         Редкие произведения, доступные цены.</p>
-                    <Button color={ButtonColor.GREEN} view={ButtonForm.RECTANGLE} title='Продукция' actionOnClick={gag}/>
+                    <Button color={ButtonColor.GREEN}
+                            view={ButtonForm.RECTANGLE} title='Продукция'
+                            actionOnClick={productions}/>
+                </div>
+            </Wrapper>
+            <Wrapper>
+                <div className='custom-wrapper-promo'>
+                    <div className='custom-wrapper-promo__heading'>Новая
+                        коллекция
+                        французских авторов
+                    </div>
+                    <p className='custom-wrapper-promo__description'>Сложно
+                        сказать,
+                        почему акционеры крупнейших компаний призывают нас к
+                        новым свершениям, которые, в свою очередь, должны быть
+                        заблокированы в рамках своих собственных рациональных
+                        ограничений. </p>
+                    <p className='custom-wrapper-promo__description'>Принимая во
+                        внимание показатели успешности, граница обучения кадров
+                        предопределяет высокую востребованность направлений
+                        прогрессивного развития.</p>
+                    <Button color={ButtonColor.SAND}
+                            view={ButtonForm.RECTANGLE}
+                            title='Ознакомиться'
+                            actionOnClick={review}
+                            customStyles={{marginTop: '40px'}}/>
                 </div>
             </Wrapper>
             <ProductCard product={product}>

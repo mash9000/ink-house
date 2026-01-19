@@ -1,0 +1,6 @@
+@use '../../../../styles/text-formatter' as tf;
+
+.custom-wrapper-promo__description {
+  width: 540px;
+  @include tf.text-formatter('custom-wrapper-promo-description');
+}

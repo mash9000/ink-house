@@ -1,0 +1,11 @@
+@use '../../../../styles/text-formatter' as tf;
+
+.custom-wrapper-promo__heading {
+  @include tf.text-formatter('custom-wrapper-promo-heading');
+  width: 521px;
+  box-sizing: border-box;
+  padding-left: 100px;
+  background: url(/images/Star-2.svg) no-repeat left center;
+  background-size: 80px;
+  margin-bottom: 20px;
+}

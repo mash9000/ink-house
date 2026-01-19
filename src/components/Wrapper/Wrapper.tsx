@@ -4,6 +4,10 @@ import './wrapper/__information/wrapper__information.scss';
 import './wrapper/__information/__heading/wrapper__information__heading.scss';
 import './wrapper/__information/__description/wrapper__information__description.scss';
 
+import './custom-wrapper-promo/custom-wrapper-promo.scss';
+import './custom-wrapper-promo/__heading/custom-wrapper-promo__heading.scss';
+import './custom-wrapper-promo/__description/custom-wrapper-promo__description.scss';
+
 import type {FC, ReactNode} from "react";
 
 interface WrapperProps {
