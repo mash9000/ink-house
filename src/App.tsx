@@ -60,7 +60,7 @@ export const App = () => {
             <Wrapper>
                 <img
                     className='wrapper__image'
-                    src='/images/first-wrapper/big-bird.webp'
+                    src='/images/wrappers/welcome/big-bird.webp'
                     alt='большая птичка'/>
                 <div className='wrapper__information'>
                     <h1 className='wrapper__information__heading'>Реплики картин
@@ -94,6 +94,34 @@ export const App = () => {
                             title='Ознакомиться'
                             actionOnClick={review}
                             customStyles={{marginTop: '40px'}}/>
+                </div>
+            </Wrapper>
+            <Wrapper>
+                <div className='our-team'>
+                    <img
+                        className='our-team__image'
+                        src='/images/wrappers/our-team/brushes.webp'
+                        alt='изображений художественных кистей'/>
+                    <div className='our-team__information'>
+                        <h1 className='our-team_information__heading'>Наша команда</h1>
+                        <p className='our-team__information__description'>Значимость этих проблем
+                            настолько очевидна, что базовый вектор развития
+                            позволяет оценить значение экспериментов, поражающих по
+                            своей масштабности и грандиозности. Мы вынуждены
+                            отталкиваться от того, что консультация с широким
+                            активом.</p>
+                        <div className='our-team__information__artists'>
+                            <a className='our-team__information__artists__link our-team__information__artists__link--1'
+                               href='http://localhost:5173/'
+                               target='_blank'></a>
+                            <a className='our-team__information__artists__link our-team__information__artists__link--2'
+                               href='http://localhost:5173/'
+                               target='_blank'></a>
+                            <a className='our-team__information__artists__link our-team__information__artists__link--3'
+                               href='http://localhost:5173/'
+                               target='_blank'></a>
+                        </div>
+                    </div>
                 </div>
             </Wrapper>
             <ProductCard product={product}>

@@ -1,0 +1,5 @@
+@use '../../../../../styles/text-formatter' as tf;
+
+.our-team__information__description {
+  @include tf.text-formatter('our-team-description');
+}
