@@ -5,6 +5,7 @@ import {useState} from "react";
 import {ProductCard} from "./components/ProductCard/ProductCard.tsx";
 import type {IProduct} from "./components/ProductCard/model/IProduct.ts";
 import {nanoid} from 'nanoid'
+import {Wrapper} from "./components/Wrapper/Wrapper.tsx";
 
 export const App = () => {
     const [numberOfItemsInTheCart, setNumberOfItemsInTheCart] = useState(0);
@@ -45,6 +46,9 @@ export const App = () => {
                           href={link.href}
                           title={link.title}/>))}
             </Navbar>
+            <Wrapper>
+                <p>check</p>
+            </Wrapper>
             <ProductCard product={product}>
                 <p className='product-card__description'>
                     <p className='product-card__description__technology'>{product.technology}</p>
