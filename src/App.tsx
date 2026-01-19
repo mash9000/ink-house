@@ -1,11 +1,17 @@
 import {Navbar} from "./components/Navbar/Navbar.tsx";
 import {linksNavbar} from "./components/data/nav-links.ts";
 import {Link, type LinkProps} from "./components/Link/Link.tsx";
+import {useState} from "react";
 import {ProductCard} from "./components/ProductCard/ProductCard.tsx";
 import type {IProduct} from "./components/ProductCard/model/IProduct.ts";
 import {nanoid} from 'nanoid'
 
 export const App = () => {
+    const [numberOfItemsInTheCart, setNumberOfItemsInTheCart] = useState(0);
+    const addToCart = (): void => {
+        setNumberOfItemsInTheCart(numberOfItemsInTheCart + 1);
+        console.log(numberOfItemsInTheCart);
+    }
 
     const product: IProduct = {
         id: nanoid(),
@@ -26,13 +32,14 @@ export const App = () => {
                 return new Intl.NumberFormat("ru").format(price) + ' руб'
             }
         },
-        buttonTitle: 'Купить'
+        buttonTitle: 'Купить',
+        addToCart: () => addToCart()
     }
 
     return (
         <>
             <Navbar
-                numberOfItemsInTheBasket={3}>
+                numberOfItemsInTheBasket={numberOfItemsInTheCart}>
                 {linksNavbar.map((link: LinkProps) => (
                     <Link key={link.title}
                           href={link.href}

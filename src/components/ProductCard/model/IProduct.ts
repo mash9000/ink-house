@@ -11,4 +11,5 @@ export interface IProduct {
     size?: ISizeOfProduct
     price: IViewCurrency;
     buttonTitle: string;
+    addToCart: () => void;
 }

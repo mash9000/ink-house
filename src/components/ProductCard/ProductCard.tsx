@@ -39,7 +39,8 @@ export const ProductCard: FC<ProductCardProps> = ({product, children}) => {
                 color={ButtonColor.GREEN}
                 view={ButtonForm.RECTANGLE}
                 title={product.buttonTitle}
-                customStyles={btnCSSProperties}/>
+                customStyles={btnCSSProperties}
+                addToCart={product.addToCart}/>
         </figure>
     )
 }
