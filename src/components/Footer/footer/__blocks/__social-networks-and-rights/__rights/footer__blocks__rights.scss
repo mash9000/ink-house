@@ -1,0 +1,5 @@
+@use '../../../../../../styles/text-formatter' as tf;
+
+.footer__blocks__rights {
+  @include tf.text-formatter('footer-rights');
+}

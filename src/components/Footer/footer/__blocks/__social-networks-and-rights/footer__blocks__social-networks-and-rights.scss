@@ -1,0 +1,10 @@
+.footer__blocks__social-networks-and-rights {
+  min-width: 132px;
+  justify-self: end;
+  grid-column: 3/4;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  outline: 1px dashed green;
+}

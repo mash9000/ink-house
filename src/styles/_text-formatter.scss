@@ -146,6 +146,16 @@
     line-height: 150%;
     color: map.get(colors.$get-color, 'black1');
     margin-bottom: 20px;
+  } @else if $element == 'footer-rights' {
+    font: {
+      family: 'Raleway', sans-serif;
+      optical-sizing: auto;
+      weight: 500;
+      style: normal;
+      size: 12px;
+    }
+    line-height: 120%;
+    color: map.get(colors.$get-color, 'gray1');
   } @else {
     @error 'неверный тип элемента ("#{$element}")';
   }

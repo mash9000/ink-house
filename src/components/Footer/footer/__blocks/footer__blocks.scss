@@ -1,0 +1,10 @@
+.footer__blocks {
+  width: 1110px;
+  height: 112px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  column-gap: 115px;
+
+  outline: 1px dashed crimson;
+}
