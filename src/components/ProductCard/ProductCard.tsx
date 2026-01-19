@@ -40,7 +40,7 @@ export const ProductCard: FC<ProductCardProps> = ({product, children}) => {
                 view={ButtonForm.RECTANGLE}
                 title={product.buttonTitle}
                 customStyles={btnCSSProperties}
-                addToCart={product.addToCart}/>
+                actionOnClick={product.addToCart}/>
         </figure>
     )
 }

@@ -1,0 +1,6 @@
+@use '../../../../../styles/text-formatter' as tf;
+
+.wrapper__information__heading {
+  @include tf.text-formatter('information-heading');
+  margin-bottom: 20px;
+}

@@ -22,7 +22,7 @@ interface ButtonProps {
     view: ButtonForm;
     title: string;
     customStyles?: CSSProperties;
-    addToCart: () => void;
+    actionOnClick: () => void;
 }
 
 export const Button: FC<ButtonProps> = ({
@@ -30,14 +30,14 @@ export const Button: FC<ButtonProps> = ({
                                             view,
                                             title,
                                             customStyles,
-                                            addToCart
+                                            actionOnClick
                                         }) => {
     return (
         <button
             className={`button ${getColorSchemeClass(color)} ${getFormClass(view)}`}
             type='button'
             style={customStyles}
-            onClick={() => addToCart()}>{title}</button>
+            onClick={() => actionOnClick()}>{title}</button>
     );
 }
 

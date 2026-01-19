@@ -1,6 +1,8 @@
 .wrapper {
   width: 100%;
   height: 620px;
-
-  outline: 2px dashed crimson;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  align-content: center;
 }
