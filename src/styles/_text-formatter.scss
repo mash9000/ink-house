@@ -185,6 +185,15 @@
     }
     margin-top: 6px;
     color: map.get(colors.$get-color, 'gray1');
+  } @else if $element == 'control-panel-heading' {
+    font: {
+      family: 'Raleway', sans-serif;
+      optical-sizing: auto;
+      weight: 500;
+      style: normal;
+      size: 40px;
+    }
+    color: map.get(colors.$get-color, 'gray2');
   } @else {
     @error 'неверный тип элемента ("#{$element}")';
   }

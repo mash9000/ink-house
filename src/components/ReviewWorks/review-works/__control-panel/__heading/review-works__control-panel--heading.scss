@@ -1,0 +1,6 @@
+@use '../../../../../styles/text-formatter' as tf;
+
+.review-works__control-panel--heading {
+  margin-right: auto;
+  @include tf.text-formatter('control-panel-heading');
+}
