@@ -3,12 +3,17 @@ import {linksNavbar} from "./components/data/nav-links.ts";
 import {Link, type LinkProps} from "./components/Link/Link.tsx";
 import {useState} from "react";
 import {ProductCard} from "./components/ProductCard/ProductCard.tsx";
-import type {IProduct} from "./components/ProductCard/model/IProduct.ts";
-import {nanoid} from 'nanoid'
 import {Wrapper} from "./components/Wrapper/Wrapper.tsx";
 import {Button} from "./components/Button/Button.tsx";
 import {ButtonColor} from "./components/Button/model/ButtonColor.ts";
 import {ButtonForm} from "./components/Button/model/ButtonForm.ts";
+import {Footer} from "./components/Footer/Footer.tsx";
+import {
+    SocialNetworkLink, type SocialNetworkLinkProps
+} from "./components/SocialNetworkLink/SocialNetworkLink.tsx";
+import {ReviewWorks} from "./components/ReviewWorks/ReviewWorks.tsx";
+import {Products} from "./components/data/Products.ts";
+import type {IProduct} from "./components/ProductCard/model/IProduct.ts";
 
 export const App = () => {
     const [numberOfItemsInTheCart, setNumberOfItemsInTheCart] = useState(0);
@@ -17,28 +22,7 @@ export const App = () => {
         console.log(numberOfItemsInTheCart);
     }
 
-    const product: IProduct = {
-        id: nanoid(),
-        image: {
-            src: 'images/works/germany/2.webp',
-            description: 'работа "Птенцы"'
-        },
-        ownerOrAuthor: 'Макс Рихтер',
-        mainTitle: 'Птенцы',
-        technology: 'Холст, масло',
-        size: {
-            width: 50,
-            height: 80
-        },
-        price: {
-            value: 14500,
-            getViewOfCurrency(price: number): string {
-                return new Intl.NumberFormat("ru").format(price) + ' руб'
-            }
-        },
-        buttonTitle: 'Купить',
-        addToCart: () => addToCart()
-    }
+    const products = new Products(addToCart);
 
     const productions = (): void => {
         console.log('Продукция');
@@ -47,6 +31,24 @@ export const App = () => {
     const review = (): void => {
         console.log('Ознакомиться');
     }
+
+    const socialNetworks: SocialNetworkLinkProps[] = [
+        {
+            href: new URL('http://localhost:5173/'),
+            imageSrc: '/images/social-networks/instagram.svg',
+            imageDesc: 'перейти на Instagram'
+        },
+        {
+            href: new URL('http://localhost:5173/'),
+            imageSrc: '/images/social-networks/meta.svg',
+            imageDesc: 'перейти на Meta'
+        },
+        {
+            href: new URL('http://localhost:5173/'),
+            imageSrc: '/images/social-networks/youtube.svg',
+            imageDesc: 'перейти на YouTube'
+        },
+    ];
 
     return (
         <>
@@ -73,6 +75,17 @@ export const App = () => {
                             actionOnClick={productions}/>
                 </div>
             </Wrapper>
+            <ReviewWorks>
+                {products.getProducts().map((product: IProduct) => (
+                    <ProductCard key={product.mainTitle} product={product}>
+                        <div className='product-card__description'>
+                            <p className='product-card__description__technology'>{product.technology}</p>
+                            <p className='product-card__description__size'>&nbsp;({product.size?.width}x{product.size?.height})</p>
+                        </div>
+                        <p className='product-card__price'>{product.price.getViewOfCurrency(product.price.value)}</p>
+                    </ProductCard>
+                ))}
+            </ReviewWorks>
             <Wrapper>
                 <div className='custom-wrapper-promo'>
                     <div className='custom-wrapper-promo__heading'>Новая
@@ -103,10 +116,13 @@ export const App = () => {
                         src='/images/wrappers/our-team/brushes.webp'
                         alt='изображений художественных кистей'/>
                     <div className='our-team__information'>
-                        <h1 className='our-team_information__heading'>Наша команда</h1>
-                        <p className='our-team__information__description'>Значимость этих проблем
+                        <h1 className='our-team_information__heading'>Наша
+                            команда</h1>
+                        <p className='our-team__information__description'>Значимость
+                            этих проблем
                             настолько очевидна, что базовый вектор развития
-                            позволяет оценить значение экспериментов, поражающих по
+                            позволяет оценить значение экспериментов, поражающих
+                            по
                             своей масштабности и грандиозности. Мы вынуждены
                             отталкиваться от того, что консультация с широким
                             активом.</p>
@@ -124,13 +140,11 @@ export const App = () => {
                     </div>
                 </div>
             </Wrapper>
-            <ProductCard product={product}>
-                <p className='product-card__description'>
-                    <p className='product-card__description__technology'>{product.technology}</p>
-                    <p className='product-card__description__size'>&nbsp;({product.size?.width}x{product.size?.height})</p>
-                </p>
-                <p className='product-card__price'>{product.price.getViewOfCurrency(product.price.value)}</p>
-            </ProductCard>
+            <Footer>
+                {socialNetworks.map((socialNetwork: SocialNetworkLinkProps) => (
+                    <SocialNetworkLink {...socialNetwork}/>
+                ))}
+            </Footer>
         </>
     )
 }
