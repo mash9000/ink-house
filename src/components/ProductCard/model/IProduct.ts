@@ -12,5 +12,4 @@ export interface IProduct {
     size?: ISizeOfProduct
     price: IViewCurrency;
     buttonTitle: string;
-    inCart: boolean;
 }
