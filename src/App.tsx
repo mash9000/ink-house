@@ -103,7 +103,11 @@ export const App = () => {
             </Wrapper>
             <Footer>
                 {socialNetworks.map((socialNetwork: SocialNetworkLinkProps) => (
-                    <SocialNetworkLink {...socialNetwork}/>
+                    <SocialNetworkLink
+                        key={socialNetwork.imageDesc}
+                        imageDesc={socialNetwork.imageDesc}
+                        imageSrc={socialNetwork.imageSrc}
+                        href={socialNetwork.href}/>
                 ))}
             </Footer>
         </>
