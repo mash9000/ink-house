@@ -7,6 +7,7 @@ export interface IProduct {
     image: IDataOfImage;
     ownerOrAuthor: string;
     mainTitle: string;
+    country: string;
     technology?: string;
     size?: ISizeOfProduct
     price: IViewCurrency;

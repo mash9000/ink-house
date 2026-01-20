@@ -1,5 +1,5 @@
 import {Navbar} from "./components/Navbar/Navbar.tsx";
-import {linksNavbar} from "./components/data/nav-links.ts";
+import {linksNavbar} from "./components/data/realization/nav-links.ts";
 import {Link, type LinkProps} from "./components/Link/Link.tsx";
 import {useState} from "react";
 import {ProductCard} from "./components/ProductCard/ProductCard.tsx";
@@ -12,8 +12,11 @@ import {
     SocialNetworkLink, type SocialNetworkLinkProps
 } from "./components/SocialNetworkLink/SocialNetworkLink.tsx";
 import {ReviewWorks} from "./components/ReviewWorks/ReviewWorks.tsx";
-import {Products} from "./components/data/Products.ts";
+import {Products} from "./components/data/realization/Products.ts";
 import type {IProduct} from "./components/ProductCard/model/IProduct.ts";
+import {
+    RepositoryOfAllCountriesFromWorks
+} from "./components/data/realization/RepositoryOfAllCountriesFromWorks.ts";
 
 export const App = () => {
     const [numberOfItemsInTheCart, setNumberOfItemsInTheCart] = useState(0);
@@ -75,7 +78,8 @@ export const App = () => {
                             actionOnClick={productions}/>
                 </div>
             </Wrapper>
-            <ReviewWorks>
+            <ReviewWorks
+                countries={new RepositoryOfAllCountriesFromWorks(products).getProducts()}>
                 {products.getProducts().map((product: IProduct) => (
                     <ProductCard key={product.mainTitle} product={product}>
                         <div className='product-card__description'>

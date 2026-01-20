@@ -8,10 +8,11 @@ import {ButtonColor} from "../Button/model/ButtonColor.ts";
 import {ButtonForm} from "../Button/model/ButtonForm.ts";
 
 interface ReviewWorksProps {
+    countries: string[];
     children?: ReactNode;
 }
 
-export const ReviewWorks: FC<ReviewWorksProps> = ({children}) => {
+export const ReviewWorks: FC<ReviewWorksProps> = ({countries, children}) => {
     const gag = (): void => {
     }
 
@@ -19,12 +20,14 @@ export const ReviewWorks: FC<ReviewWorksProps> = ({children}) => {
         <div className="review-works">
             <div className='review-works__control-panel'>
                 <h1 className='review-works__control-panel--heading'>Репродукции</h1>
-                <Button color={ButtonColor.GREEN} view={ButtonForm.ROUNDED}
-                        title='Франция' actionOnClick={() => gag()}/>
-                <Button color={ButtonColor.GREEN} view={ButtonForm.ROUNDED}
-                        title='Германия' actionOnClick={() => gag()}/>
-                <Button color={ButtonColor.GREEN} view={ButtonForm.ROUNDED}
-                        title='Англия' actionOnClick={() => gag()}/>
+                {countries.map((coutry: string) => (
+                    <Button
+                        key={coutry}
+                        color={ButtonColor.GREEN}
+                        view={ButtonForm.ROUNDED}
+                        title={coutry}
+                        actionOnClick={() => gag()}/>
+                ))}
             </div>
             {children}
         </div>
