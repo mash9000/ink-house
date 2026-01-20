@@ -1,3 +1,7 @@
+import type {IProduct} from "../../ProductCard/model/IProduct.ts";
+
 export interface IGetCountriesFromWorks {
-    getProducts(): string[];
+    getCountries(): string[];
+
+    getProductsByCountry(country: string): IProduct[];
 }

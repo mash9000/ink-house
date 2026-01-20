@@ -10,7 +10,7 @@ import './product-card/__price/product-card__price.scss';
 
 import {Button} from "../Button/Button.tsx";
 import {ButtonForm} from "../Button/model/ButtonForm.ts";
-import type {CSSProperties, FC, ReactNode} from "react";
+import {type CSSProperties, type FC, type ReactNode} from "react";
 import {ButtonColor} from "../Button/model/ButtonColor.ts";
 import type {IProduct} from "./model/IProduct.ts";
 
@@ -24,6 +24,7 @@ export const ProductCard: FC<ProductCardProps> = ({product, children}) => {
         width: '310px',
         height: '65px'
     };
+
     return (
         <figure className="product-card">
             <div className='product-card__image__frame'>
@@ -39,8 +40,7 @@ export const ProductCard: FC<ProductCardProps> = ({product, children}) => {
                 color={ButtonColor.GREEN}
                 view={ButtonForm.RECTANGLE}
                 title={product.buttonTitle}
-                customStyles={btnCSSProperties}
-                actionOnClick={product.addToCart}/>
+                customStyles={btnCSSProperties}/>
         </figure>
     )
 }
