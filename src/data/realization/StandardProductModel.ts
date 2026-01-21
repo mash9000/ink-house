@@ -91,6 +91,66 @@ export class StandardProductModel implements IModelOfGoodsStorage {
         this.goods.set(image7.mainTitle, image7);
 
         const image8 = new StandardProduct(
+            'germany/2.webp',
+            'Птенцы',
+            'Макс Рихтер',
+            'Германия',
+            'Холст, масло',
+            50,
+            80,
+            14500
+        );
+        this.goods.set(image8.mainTitle, image8);
+
+        const image9 = new StandardProduct(
+            'germany/3.webp',
+            'Среди листьев',
+            'Мартин Майер',
+            'Германия',
+            'Цветная литограия',
+            40,
+            60,
+            20000
+        );
+        this.goods.set(image9.mainTitle, image9);
+
+        const image10 = new StandardProduct(
+            'germany/4.webp',
+            'Яркая птица',
+            'Герман Беккер',
+            'Германия',
+            'Цветная литограия',
+            40,
+            60,
+            13000
+        );
+        this.goods.set(image10.mainTitle, image10);
+
+        const image11 = new StandardProduct(
+            'germany/5.webp',
+            'Дятлы',
+            'Вульф Бауэр',
+            'Германия',
+            'Бумага, акрил',
+            50,
+            80,
+            20000
+        );
+        this.goods.set(image11.mainTitle, image11);
+
+        const image12 = new StandardProduct(
+            'germany/6.webp',
+            'Большие воды',
+            'Вальтер Харманн',
+            'Германия',
+            'Бумага, акрил',
+            50,
+            80,
+            23000
+        );
+        this.goods.set(image12.mainTitle, image12);
+
+        const image13 = new StandardProduct(
             'england/1.webp',
             'Дикий зверь',
             'Пол Смит',
@@ -100,7 +160,67 @@ export class StandardProductModel implements IModelOfGoodsStorage {
             80,
             19500
         );
-        this.goods.set(image8.mainTitle, image8);
+        this.goods.set(image13.mainTitle, image13);
+
+        const image14 = new StandardProduct(
+            'england/2.webp',
+            'Скалистый берег',
+            'Джон Уайт',
+            'Англия',
+            'Цветная литография',
+            40,
+            60,
+            17500
+        );
+        this.goods.set(image14.mainTitle, image14);
+
+        const image15 = new StandardProduct(
+            'england/3.webp',
+            'Река и горы',
+            'Джим Уотсон',
+            'Англия',
+            'Акварель, бумага',
+            50,
+            80,
+            20500
+        );
+        this.goods.set(image15.mainTitle, image15);
+
+        const image16 = new StandardProduct(
+            'england/4.webp',
+            'Белый попугай',
+            'Юджин Зиллион',
+            'Англия',
+            'Цветная литография',
+            40,
+            60,
+            15500
+        );
+        this.goods.set(image16.mainTitle, image16);
+
+        const image17 = new StandardProduct(
+            'england/5.webp',
+            'Ночная рыба',
+            'Эрик Гиллман',
+            'Англия',
+            'Бумага, акрил',
+            50,
+            80,
+            12500
+        );
+        this.goods.set(image17.mainTitle, image17);
+
+        const image18 = new StandardProduct(
+            'england/6.webp',
+            'Рыжий кот',
+            'Альфред Барр',
+            'Англия',
+            'Цветная литография',
+            40,
+            60,
+            21000
+        );
+        this.goods.set(image18.mainTitle, image18);
     }
 
     obtainTheCountriesOfOriginOfTheArtists(): string[] {
