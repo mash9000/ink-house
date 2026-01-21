@@ -1,4 +1,4 @@
-import type {LinkProps} from "../../Link/Link.tsx";
+import type {LinkProps} from "../../components/Link/Link.tsx";
 
 export const linksNavbar: LinkProps[] =  [
     {

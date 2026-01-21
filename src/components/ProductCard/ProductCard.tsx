@@ -12,7 +12,7 @@ import {Button} from "../Button/Button.tsx";
 import {ButtonForm} from "../Button/model/ButtonForm.ts";
 import {type CSSProperties, type FC, type ReactNode} from "react";
 import {ButtonColor} from "../Button/model/ButtonColor.ts";
-import type {IProductDescription} from "../data/model/IProductDescription.ts";
+import type {IProductDescription} from "../../data/model/IProductDescription.ts";
 
 interface ProductCardProps {
     product: IProductDescription;

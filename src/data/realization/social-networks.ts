@@ -1,6 +1,6 @@
 import type {
     SocialNetworkLinkProps
-} from "../../SocialNetworkLink/SocialNetworkLink.tsx";
+} from "../../components/SocialNetworkLink/SocialNetworkLink.tsx";
 
 export const socialNetworks: SocialNetworkLinkProps[] = [
     {

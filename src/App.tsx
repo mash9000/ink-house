@@ -1,5 +1,5 @@
 import {Navbar} from "./components/Navbar/Navbar.tsx";
-import {linksNavbar} from "./components/data/realization/nav-links.ts";
+import {linksNavbar} from "./data/realization/nav-links.ts";
 import {Link, type LinkProps} from "./components/Link/Link.tsx";
 import {Wrapper} from "./components/Wrapper/Wrapper.tsx";
 import {Button} from "./components/Button/Button.tsx";
@@ -9,17 +9,17 @@ import {Footer} from "./components/Footer/Footer.tsx";
 import {
     SocialNetworkLink, type SocialNetworkLinkProps
 } from "./components/SocialNetworkLink/SocialNetworkLink.tsx";
-import {socialNetworks} from "./components/data/realization/social-networks.ts";
+import {socialNetworks} from "./data/realization/social-networks.ts";
 import type {
     IModelOfGoodsStorage
-} from "./components/data/model/IModelOfGoodsStorage.ts";
+} from "./data/model/IModelOfGoodsStorage.ts";
 import {
     StandardProductModel
-} from "./components/data/realization/StandardProductModel.ts";
+} from "./data/realization/StandardProductModel.ts";
 import {ReviewWorks} from "./components/ReviewWorks/ReviewWorks.tsx";
 import type {
     IProductDescription
-} from "./components/data/model/IProductDescription.ts";
+} from "./data/model/IProductDescription.ts";
 import {ProductCard} from "./components/ProductCard/ProductCard.tsx";
 import {useState} from "react";
 
