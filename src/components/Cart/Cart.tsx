@@ -6,11 +6,11 @@ import './basket/__counter/basket__counter.scss';
 
 import type {FC} from "react";
 
-interface BasketProps {
+interface CartProps {
     numberOfItemsInTheBasket: number;
 }
 
-export const Basket: FC<BasketProps> = ({numberOfItemsInTheBasket}) => {
+export const Cart: FC<CartProps> = ({numberOfItemsInTheBasket}) => {
     return (
         <div className='basket basket--hover basket--active basket--focus'>
             <span

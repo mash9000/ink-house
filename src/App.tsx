@@ -10,12 +10,33 @@ import {
     SocialNetworkLink, type SocialNetworkLinkProps
 } from "./components/SocialNetworkLink/SocialNetworkLink.tsx";
 import {socialNetworks} from "./components/data/realization/social-networks.ts";
+import type {
+    IModelOfGoodsStorage
+} from "./components/data/model/IModelOfGoodsStorage.ts";
+import {
+    StandardProductModel
+} from "./components/data/realization/StandardProductModel.ts";
+import {ReviewWorks} from "./components/ReviewWorks/ReviewWorks.tsx";
+import type {IProduct} from "./components/ProductCard/model/IProduct.ts";
+import {ProductCard} from "./components/ProductCard/ProductCard.tsx";
+import {useState} from "react";
 
 export const App = () => {
+    const rep: IModelOfGoodsStorage = new StandardProductModel();
+
+    const [repository, setRepository] = useState<IModelOfGoodsStorage>(new StandardProductModel());
+    const [numberOfItemsInTheBasket, setNumberOfItemsInTheBasket] = useState<number>(0);
+    const addProductToCart = (product: IProduct): void => {
+        const copyOfRepository = repository;
+        copyOfRepository.addGoodToCart(product);
+        setRepository(copyOfRepository);
+        setNumberOfItemsInTheBasket(repository.purchasedGoods.size);
+    }
+
     return (
         <>
             <Navbar
-                numberOfItemsInTheBasket={0}>
+                numberOfItemsInTheBasket={numberOfItemsInTheBasket}>
                 {linksNavbar.map((link: LinkProps) => (
                     <Link key={link.title}
                           href={link.href}
@@ -33,21 +54,26 @@ export const App = () => {
                         качество отрисовки на плотной бумаге или льняном холсте.
                         Редкие произведения, доступные цены.</p>
                     <Button color={ButtonColor.GREEN}
-                            view={ButtonForm.RECTANGLE} title='Продукция'/>
+                            view={ButtonForm.RECTANGLE}
+                            title='Продукция'
+                            functionPerformed={() => alert('Продукция')}/>
                 </div>
             </Wrapper>
-            {/*<ReviewWorks*/}
-            {/*    countries={countries.getCountries()}>*/}
-            {/*    {worksOfTheSelectedCountry.map((product: IProduct) => (*/}
-            {/*        <ProductCard key={product.mainTitle} product={product}>*/}
-            {/*            <div className='product-card__description'>*/}
-            {/*                <p className='product-card__description__technology'>{product.technology}</p>*/}
-            {/*                <p className='product-card__description__size'>&nbsp;({product.size?.width}x{product.size?.height})</p>*/}
-            {/*            </div>*/}
-            {/*            <p className='product-card__price'>{product.price.getViewOfCurrency(product.price.value)}</p>*/}
-            {/*        </ProductCard>*/}
-            {/*    ))}*/}
-            {/*</ReviewWorks>*/}
+            <ReviewWorks
+                countries={rep.obtainTheCountriesOfOriginOfTheArtists()}>
+                {rep.receiveAllGoods().map((product: IProduct) => (
+                    <ProductCard
+                        key={product.id}
+                        product={product}
+                        addToCart={addProductToCart}>
+                        <div className='product-card__description'>
+                            <p className='product-card__description__technology'>{product.technology}</p>
+                            <p className='product-card__description__size'>&nbsp;({product.size?.width}x{product.size?.height})</p>
+                        </div>
+                        <p className='product-card__price'>{product.price.getViewOfCurrency(product.price.value)}</p>
+                    </ProductCard>
+                ))}
+            </ReviewWorks>
             <Wrapper>
                 <div className='custom-wrapper-promo'>
                     <div className='custom-wrapper-promo__heading'>Новая
@@ -67,7 +93,8 @@ export const App = () => {
                     <Button color={ButtonColor.SAND}
                             view={ButtonForm.RECTANGLE}
                             title='Ознакомиться'
-                            customStyles={{marginTop: '40px'}}/>
+                            customStyles={{marginTop: '40px'}}
+                            functionPerformed={() => alert('Ознакомиться')}/>
                 </div>
             </Wrapper>
             <Wrapper>

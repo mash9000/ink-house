@@ -3,7 +3,7 @@ import './navbar/__elements/navbar__elements.scss';
 
 import type {FC, ReactNode} from "react";
 import {MainHomeLink} from "../MainHomeLink/MainHomeLink.tsx";
-import {Basket} from "../Basket/Basket.tsx";
+import {Cart} from "../Cart/Cart.tsx";
 
 interface NavbarProps {
     children: ReactNode;
@@ -19,7 +19,7 @@ export const Navbar: FC<NavbarProps> = ({
             <div className="navbar__elements">
                 <MainHomeLink/>
                 {children}
-                <Basket numberOfItemsInTheBasket={numberOfItemsInTheBasket}/>
+                <Cart numberOfItemsInTheBasket={numberOfItemsInTheBasket}/>
             </div>
         </nav>
     );

@@ -17,9 +17,14 @@ import type {IProduct} from "./model/IProduct.ts";
 interface ProductCardProps {
     product: IProduct;
     children: ReactNode;
+    addToCart: (product: IProduct) => void;
 }
 
-export const ProductCard: FC<ProductCardProps> = ({product, children}) => {
+export const ProductCard: FC<ProductCardProps> = ({
+                                                      product,
+                                                      children,
+                                                      addToCart
+                                                  }) => {
     const btnCSSProperties: CSSProperties = {
         width: '310px',
         height: '65px'
@@ -34,13 +39,16 @@ export const ProductCard: FC<ProductCardProps> = ({product, children}) => {
                     alt={product.image.description}/>
             </div>
             <p className='product-card__owner-or-author'>{product.ownerOrAuthor}</p>
-            <figcaption className='product-card__title'>{product.mainTitle}</figcaption>
+            <figcaption
+                className='product-card__title'>{product.mainTitle}</figcaption>
             {children}
             <Button
                 color={ButtonColor.GREEN}
                 view={ButtonForm.RECTANGLE}
                 title={product.buttonTitle}
-                customStyles={btnCSSProperties}/>
+                customStyles={btnCSSProperties}
+                parameter={product}
+                functionPerformed={(product) => addToCart(product)}/>
         </figure>
     )
 }

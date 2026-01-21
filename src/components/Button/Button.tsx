@@ -22,19 +22,24 @@ interface ButtonProps {
     view: ButtonForm;
     title: string;
     customStyles?: CSSProperties;
+    parameter?: any;
+    functionPerformed: (o?: any) => void;
 }
 
 export const Button: FC<ButtonProps> = ({
                                             color,
                                             view,
                                             title,
-                                            customStyles
+                                            customStyles,
+                                            parameter,
+                                            functionPerformed
                                         }) => {
     return (
         <button
             className={`button ${getColorSchemeClass(color)} ${getFormClass(view)}`}
             type='button'
-            style={customStyles}>{title}</button>
+            style={customStyles}
+            onClick={() => functionPerformed(parameter)}>{title}</button>
     );
 }
 
