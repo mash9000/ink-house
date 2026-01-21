@@ -10,23 +10,26 @@ import {ButtonForm} from "../Button/model/ButtonForm.ts";
 interface ReviewWorksProps {
     countries: string[];
     children?: ReactNode;
+    changeCountry: (country: string) => void;
 }
 
-export const ReviewWorks: FC<ReviewWorksProps> = ({countries, children}) => {
-    const gag = (): void => {
-    }
-
+export const ReviewWorks: FC<ReviewWorksProps> = ({
+                                                      countries,
+                                                      children,
+                                                      changeCountry
+                                                  }) => {
     return (
         <div className="review-works">
             <div className='review-works__control-panel'>
                 <h1 className='review-works__control-panel--heading'>Репродукции</h1>
-                {countries.map((coutry: string) => (
+                {countries.map((country: string) => (
                     <Button
-                        key={coutry}
+                        key={country}
                         color={ButtonColor.GREEN}
                         view={ButtonForm.ROUNDED}
-                        title={coutry}
-                        actionOnClick={() => gag()}/>
+                        title={country}
+                        parameter={country}
+                        functionPerformed={changeCountry}/>
                 ))}
             </div>
             {children}

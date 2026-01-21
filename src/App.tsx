@@ -17,13 +17,13 @@ import {
     StandardProductModel
 } from "./components/data/realization/StandardProductModel.ts";
 import {ReviewWorks} from "./components/ReviewWorks/ReviewWorks.tsx";
-import type {IProductDescription} from "./components/data/model/IProductDescription.ts";
+import type {
+    IProductDescription
+} from "./components/data/model/IProductDescription.ts";
 import {ProductCard} from "./components/ProductCard/ProductCard.tsx";
 import {useState} from "react";
 
 export const App = () => {
-    const rep: IModelOfGoodsStorage = new StandardProductModel();
-
     const [repository, setRepository] = useState<IModelOfGoodsStorage>(new StandardProductModel());
     const [numberOfItemsInTheBasket, setNumberOfItemsInTheBasket] = useState<number>(0);
     const addProductToCart = (product: IProductDescription): void => {
@@ -31,6 +31,11 @@ export const App = () => {
         copyOfRepository.addGoodToCart(product);
         setRepository(copyOfRepository);
         setNumberOfItemsInTheBasket(repository.purchasedGoods.size);
+    }
+
+    const [countrysWork, setCountrysWork] = useState<string>(repository.obtainTheCountriesOfOriginOfTheArtists()[0]);
+    const changeCountry = (country: string): void => {
+        setCountrysWork(country);
     }
 
     return (
@@ -60,8 +65,9 @@ export const App = () => {
                 </div>
             </Wrapper>
             <ReviewWorks
-                countries={rep.obtainTheCountriesOfOriginOfTheArtists()}>
-                {rep.receiveAllGoods().map((product: IProductDescription) => (
+                countries={repository.obtainTheCountriesOfOriginOfTheArtists()}
+                changeCountry={changeCountry}>
+                {repository.receiveAllGoodsFromTheCountry(countrysWork).map((product: IProductDescription) => (
                     <ProductCard
                         key={product.id}
                         product={product}

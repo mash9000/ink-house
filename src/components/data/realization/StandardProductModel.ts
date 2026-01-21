@@ -104,7 +104,7 @@ export class StandardProductModel implements IModelOfGoodsStorage {
     }
 
     obtainTheCountriesOfOriginOfTheArtists(): string[] {
-        return Array.from(new Set(Array.from(this.goods.values()).map(p => p.country)))
+        return [...new Set([...this.goods.values()].map((product: IProductDescription) => product.country))]
     }
 
     receiveAllGoods(): IProductDescription[] {
