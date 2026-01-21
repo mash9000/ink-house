@@ -1,7 +1,7 @@
-import type {IProduct} from "../../ProductCard/model/IProduct.ts";
+import type {IProductDescription} from "../model/IProductDescription.ts";
 import {nanoid} from "nanoid";
 
-export const products: IProduct[] = [
+export const products: IProductDescription[] = [
     {
         id: nanoid(),
         image: {

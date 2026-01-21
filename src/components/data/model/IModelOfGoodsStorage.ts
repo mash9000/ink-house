@@ -1,13 +1,13 @@
-import type {IProduct} from "../../ProductCard/model/IProduct.ts";
+import type {IProductDescription} from "./IProductDescription.ts";
 
 export interface IModelOfGoodsStorage {
-    receiveAllGoods(): IProduct[];
+    receiveAllGoods(): IProductDescription[];
 
-    receiveAllGoodsFromTheCountry(country: string): IProduct[];
+    receiveAllGoodsFromTheCountry(country: string): IProductDescription[];
 
     obtainTheCountriesOfOriginOfTheArtists(): string[];
 
-    readonly purchasedGoods: Map<string, IProduct>;
+    readonly purchasedGoods: Map<string, IProductDescription>;
 
-    addGoodToCart(product: IProduct): void;
+    addGoodToCart(product: IProductDescription): void;
 }

@@ -17,7 +17,7 @@ import {
     StandardProductModel
 } from "./components/data/realization/StandardProductModel.ts";
 import {ReviewWorks} from "./components/ReviewWorks/ReviewWorks.tsx";
-import type {IProduct} from "./components/ProductCard/model/IProduct.ts";
+import type {IProductDescription} from "./components/data/model/IProductDescription.ts";
 import {ProductCard} from "./components/ProductCard/ProductCard.tsx";
 import {useState} from "react";
 
@@ -26,11 +26,12 @@ export const App = () => {
 
     const [repository, setRepository] = useState<IModelOfGoodsStorage>(new StandardProductModel());
     const [numberOfItemsInTheBasket, setNumberOfItemsInTheBasket] = useState<number>(0);
-    const addProductToCart = (product: IProduct): void => {
+    const addProductToCart = (product: IProductDescription): void => {
         const copyOfRepository = repository;
         copyOfRepository.addGoodToCart(product);
         setRepository(copyOfRepository);
         setNumberOfItemsInTheBasket(repository.purchasedGoods.size);
+        console.log(repository);
     }
 
     return (
@@ -61,7 +62,7 @@ export const App = () => {
             </Wrapper>
             <ReviewWorks
                 countries={rep.obtainTheCountriesOfOriginOfTheArtists()}>
-                {rep.receiveAllGoods().map((product: IProduct) => (
+                {rep.receiveAllGoods().map((product: IProductDescription) => (
                     <ProductCard
                         key={product.id}
                         product={product}
@@ -70,7 +71,7 @@ export const App = () => {
                             <p className='product-card__description__technology'>{product.technology}</p>
                             <p className='product-card__description__size'>&nbsp;({product.size?.width}x{product.size?.height})</p>
                         </div>
-                        <p className='product-card__price'>{product.price.getViewOfCurrency(product.price.value)}</p>
+                        <p className='product-card__price'>{product.price()}</p>
                     </ProductCard>
                 ))}
             </ReviewWorks>
