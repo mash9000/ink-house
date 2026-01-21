@@ -31,7 +31,6 @@ export const App = () => {
         copyOfRepository.addGoodToCart(product);
         setRepository(copyOfRepository);
         setNumberOfItemsInTheBasket(repository.purchasedGoods.size);
-        console.log(repository);
     }
 
     return (

@@ -77,6 +77,30 @@ export class StandardProductModel implements IModelOfGoodsStorage {
             20000
         );
         this.goods.set(image6.mainTitle, image6);
+
+        const image7 = new StandardProduct(
+            'germany/1.webp',
+            'Над городом',
+            'Курт Вернер',
+            'Германия',
+            'Цветная литография',
+            40,
+            60,
+            16000
+        );
+        this.goods.set(image7.mainTitle, image7);
+
+        const image8 = new StandardProduct(
+            'england/1.webp',
+            'Дикий зверь',
+            'Пол Смит',
+            'Англия',
+            'Акварель, бумага',
+            50,
+            80,
+            19500
+        );
+        this.goods.set(image8.mainTitle, image8);
     }
 
     obtainTheCountriesOfOriginOfTheArtists(): string[] {
