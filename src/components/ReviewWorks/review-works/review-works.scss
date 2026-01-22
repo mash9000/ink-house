@@ -4,4 +4,69 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+
+  container-name: review-box;
+  container-type: inline-size;
+
+  @media screen and (max-width: 768px) {
+    width: 690px;
+  }
+
+  @media screen and (max-width: 576px) {
+    width: 510px;
+  }
+
+  @media screen and (max-width: 320px) {
+    width: 290px;
+  }
+
+  @container review-box (max-width: 768px) {
+    .product-card {
+      width: 330px;
+
+      &__image__frame {
+        width: 290px;
+        height: 422px;
+      }
+
+      .button--rectangle {
+        width: 290px !important;
+      }
+    }
+
+    @container review-box (max-width: 576px) {
+      .product-card {
+        width: 240px;
+        height: 514px;
+
+        &__image__frame {
+          width: 200px;
+          height: 250px;
+        }
+
+        &__owner-or-author {
+          font-size: 16px;
+        }
+
+        &__title {
+          font-size: 24px;
+        }
+
+        &__description {
+          width: 200px;
+          font-size: 16px;
+        }
+
+        &__price {
+          font-size: 20px;
+        }
+
+        .button--rectangle {
+          width: 200px !important;
+          height: 50px !important;
+          margin-top: 10px !important;
+        }
+      }
+    }
+  }
 }
