@@ -34,12 +34,16 @@ export const Button: FC<ButtonProps> = ({
                                             parameter,
                                             functionPerformed
                                         }) => {
+    const innerFunction = () => {
+        functionPerformed(parameter);
+    }
+
     return (
         <button
             className={`button ${getColorSchemeClass(color)} ${getFormClass(view)}`}
             type='button'
             style={customStyles}
-            onClick={() => functionPerformed(parameter)}>{title}</button>
+            onClick={innerFunction}>{title}</button>
     );
 }
 
