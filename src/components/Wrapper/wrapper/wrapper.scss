@@ -5,4 +5,108 @@
   grid-template-columns: 1fr 1fr;
   column-gap: 30px;
   align-content: center;
+
+  container-name: wrapper;
+  container-type: inline-size;
+
+  @media screen and (max-width: 768px) {
+    width: 690px;
+  }
+
+  @media screen and (max-width: 576px) {
+    width: 510px;
+    height: 265px !important;
+    margin: 50px auto 0;
+  }
+
+  @media screen and (max-width: 320px) {
+    width: 290px;
+    height: 233px !important;
+    margin: 50px auto 0;
+    grid-template-columns: 0 1fr;
+    column-gap: 0;
+  }
+
+  @container wrapper (max-width: 768px) {
+    .wrapper {
+      &__image {
+        width: 330px;
+        height: auto;
+      }
+
+      &__information {
+        width: 330px;
+        height: 308px;
+
+        &__heading {
+          font-size: 40px;
+        }
+
+        &__description {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  @container wrapper (max-width: 576px) {
+    .wrapper {
+      width: 510px !important;
+
+      &__image {
+        width: 195px;
+        height: auto;
+      }
+
+      &__information {
+        width: 285px;
+        height: 239px;
+
+        &__heading {
+          font-size: 36px;
+          margin-bottom: 10px !important;
+        }
+
+        &__description {
+          font-size: 15px;
+          margin-bottom: 10px !important;
+        }
+      }
+    }
+
+    .button--rectangle {
+      width: 178px;
+      height: 50px;
+    }
+  }
+
+  @container wrapper (max-width: 320px) {
+    .wrapper {
+      width: 290px !important;
+
+      &__image {
+        display: none;
+      }
+
+      &__information {
+        width: 290px;
+        height: 233px;
+
+        &__heading {
+          font-size: 30px;
+          margin-bottom: 20px !important;
+        }
+
+        &__description {
+          font-size: 14px;
+          margin-bottom: 14px !important;
+        }
+      }
+    }
+
+    .button--rectangle {
+      width: 154px;
+      height: 50px;
+    }
+  }
 }
