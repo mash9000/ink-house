@@ -38,6 +38,8 @@ export const App = () => {
         setCountrysWork(country);
     }
 
+    // ERROR
+
     return (
         <>
             <Navbar
